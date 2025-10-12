@@ -1,0 +1,41 @@
+# LLMs.txt - Rules for AI/LLM web crawlers and agents
+# Learn more at https://llmtext.dev/
+
+# General rules for all AI/LLM agents
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ChatGPT-User
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+# Allow specific AI agents that respect these rules
+User-agent: CCBot
+Allow: /
+
+# General rules for all other AI/LLM agents
+User-agent: *
+Disallow: /admin
+Disallow: /private
+Disallow: /api
+Disallow: /user/*
+Disallow: /account/*
+Allow: /$
+Allow: /blog/*
+Allow: /knowledge-base/*
+
+# Rate limiting (requests per minute)
+Crawl-delay: 10
+
+# Sitemap for AI crawlers
+Sitemap: https://borangilabs.com/sitemap.xml
+
+# Contact information for AI crawler operators
+Contact: webmaster@borangilabs.com
+
+# Last updated: 2025-10-05

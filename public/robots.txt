@@ -1,0 +1,9 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /private
+Disallow: /api
+
+# Sitemap location
+Sitemap: https://borangilabs.com/sitemap.xml

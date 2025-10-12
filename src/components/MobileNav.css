@@ -1,0 +1,282 @@
+/* Tech-Inspired Mobile Navigation */
+
+/* Terminal-like color scheme */
+:root {
+  --terminal-bg: #0a192f;
+  --terminal-text: #64ffda;
+  --terminal-accent: #4a6cf7;
+  --terminal-border: #1e2a4a;
+  --terminal-hover: #112240;
+  --terminal-highlight: rgba(100, 255, 218, 0.1);
+}
+
+/* Mobile Menu Button - Terminal Style */
+.mobile-menu-button {
+  display: flex !important;
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 9999;
+  background: var(--terminal-bg);
+  color: var(--terminal-text);
+  border: 1px solid var(--terminal-text);
+  border-radius: 4px;
+  width: 50px;
+  height: 50px;
+  font-family: 'Fira Code', 'Courier New', monospace;
+  font-size: 1.5rem;
+  font-weight: 700;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  padding: 0;
+  margin: 0;
+  box-shadow: 0 0 10px rgba(74, 108, 247, 0.3);
+}
+
+.mobile-menu-button:hover {
+  background: var(--terminal-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(74, 108, 247, 0.4);
+}
+
+.mobile-menu-button:focus {
+  outline: 2px solid white;
+  outline-offset: 2px;
+}
+
+/* Matrix-style Overlay */
+.mobile-menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(rgba(10, 25, 47, 0.9), rgba(10, 25, 47, 0.95));
+  z-index: 9998;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s ease-out;
+  backdrop-filter: blur(5px);
+}
+
+.mobile-menu-overlay.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Mobile Navigation */
+.mobile-nav {
+  position: fixed;
+  top: 0;
+  right: -300px;
+  width: 280px;
+  height: 100vh;
+  background: var(--terminal-bg);
+  border-left: 1px solid var(--terminal-text);
+  z-index: 9999;
+  transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  padding: 0;
+  margin: 0;
+  box-shadow: -5px 0 25px rgba(0, 0, 0, 0.5);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  padding-top: 1rem;
+  font-family: 'Fira Code', 'Courier New', monospace;
+}
+
+/* Terminal-style Close Button */
+.mobile-close-button {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: none;
+  border: 1px solid var(--terminal-text);
+  color: var(--terminal-text);
+  font-family: 'Fira Code', 'Courier New', monospace;
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 1;
+  cursor: pointer;
+  width: 36px;
+  height: 36px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0.5rem;
+  z-index: 10000;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(100, 255, 218, 0.2);
+}
+
+.mobile-close-button:hover,
+.mobile-close-button:focus {
+  background: var(--terminal-highlight);
+  color: #fff;
+  transform: scale(1.1);
+  outline: none;
+  box-shadow: 0 0 15px rgba(100, 255, 218, 0.4);
+}
+
+.mobile-nav.open {
+  right: 0;
+}
+
+.mobile-nav-list {
+  list-style: none;
+  padding: 1.5rem 0.5rem; /* Add horizontal padding */
+  margin: 0;
+  margin-top: 1rem;
+  width: 100%;
+  border-top: 1px solid var(--terminal-border);
+  /* Ensure proper spacing between items */
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.mobile-nav-item {
+  margin: 0.25rem 0; /* Add vertical spacing between items */
+  padding: 0;
+  width: 100%;
+  opacity: 1;
+  transform: none;
+  transition: all 0.3s ease;
+  border-left: 3px solid transparent;
+  position: relative;
+  overflow: hidden;
+  /* Ensure proper touch target sizing */
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+}
+
+.mobile-nav-item::before {
+  content: '>';
+  position: absolute;
+  left: 0.5rem;
+  color: var(--terminal-text);
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: all 0.3s ease;
+}
+
+.mobile-nav-item:hover::before {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.mobile-nav-item:hover {
+  background: var(--terminal-hover);
+  border-left-color: var(--terminal-text);
+}
+
+.mobile-nav.open .mobile-nav-item {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Staggered animation for menu items */
+.mobile-nav-item:nth-child(1) { transition-delay: 0.1s; }
+.mobile-nav-item:nth-child(2) { transition-delay: 0.15s; }
+.mobile-nav-item:nth-child(3) { transition-delay: 0.2s; }
+.mobile-nav-item:nth-child(4) { transition-delay: 0.25s; }
+.mobile-nav-item:nth-child(5) { transition-delay: 0.3s; }
+.mobile-nav-item:nth-child(6) { transition-delay: 0.35s; }
+.mobile-nav-item:nth-child(7) { transition-delay: 0.4s; }
+
+.mobile-nav-item a,
+.mobile-nav-item button {
+  display: block;
+  width: 100%;
+  min-height: 44px; /* Minimum touch target height */
+  text-align: left;
+  padding: 1.25rem 1.5rem 1.25rem 2rem; /* Increased vertical padding */
+  margin: 0.25rem 0; /* Add vertical spacing between items */
+  color: #ccd6f6;
+  text-decoration: none;
+  font-family: 'Fira Code', 'Courier New', monospace;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  text-transform: lowercase;
+  /* Ensure touch target is at least 44x44px */
+  display: flex;
+  align-items: center;
+}
+
+/* Typewriter effect on hover */
+.mobile-nav-item a::after,
+.mobile-nav-item button::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 1px;
+  bottom: 0.5rem;
+  left: 2rem;
+  background-color: var(--terminal-text);
+  transition: width 0.3s ease;
+}
+
+.mobile-nav-item:hover a::after,
+.mobile-nav-item:hover button::after {
+  width: calc(100% - 3.5rem);
+}
+
+.mobile-nav-item a:hover,
+.mobile-nav-item button:hover,
+.mobile-nav-item a:focus,
+.mobile-nav-item button:focus,
+.mobile-nav-item a.active,
+.mobile-nav-item button.active {
+  color: var(--terminal-text);
+  padding-left: 2.5rem;
+  outline: none;
+  background: var(--terminal-hover);
+}
+
+/* Active state indicator */
+.mobile-nav-item a.active::before,
+.mobile-nav-item button.active::before {
+  content: '>';
+  position: absolute;
+  left: 0.8rem;
+  color: var(--terminal-text);
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Mobile menu overlay when open */
+.mobile-menu-overlay.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Hide on desktop */
+@media (min-width: 769px) {
+  .mobile-nav,
+  .mobile-menu-button,
+  .mobile-menu-overlay {
+    display: none !important;
+  }
+}
+
+/* Ensure mobile nav is visible on mobile */
+@media (max-width: 768px) {
+  .mobile-nav {
+    display: flex !important;
+  }
+  
+  .mobile-menu-button {
+    display: flex !important;
+  }
+}

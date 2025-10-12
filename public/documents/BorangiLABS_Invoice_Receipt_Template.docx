@@ -1,0 +1,101 @@
+BORANGILABS
+INVOICE
+
+[Company Logo]
+
+BORANGILABS
+[Company Address]
+City, Country
+Phone: +254 769 702 224
+Email: billing@borangitech.com
+VAT/PIN: [Your VAT/PIN Number]
+
+BILL TO:
+[Client Company Name]
+[Client Contact Person]
+[Client Address]
+[City, Country]
+[Client Email]
+[Client Phone]
+
+INVOICE #: [Invoice Number]
+DATE: [Invoice Date]
+DUE DATE: [Due Date]
+PAYMENT TERMS: Net 15 days
+
+┌───────────────┬────────────────────┬───────────┬───────────┬───────────┐
+│ ITEM          │ DESCRIPTION       │ QUANTITY  │ RATE (KES)│ AMOUNT    │
+├───────────────┼────────────────────┼───────────┼───────────┼───────────┤
+│ [Service 1]   │ [Description]     │     [Qty] │   [Rate]  │   [Total] │
+├───────────────┼────────────────────┼───────────┼───────────┼───────────┤
+│ [Service 2]   │ [Description]     │     [Qty] │   [Rate]  │   [Total] │
+├───────────────┼────────────────────┼───────────┼───────────┼───────────┤
+│ [Service 3]   │ [Description]     │     [Qty] │   [Rate]  │   [Total] │
+└───────────────┴────────────────────┴───────────┴───────────┴───────────┘
+
+SUBTOTAL: KES [Subtotal]
+TAX (16% VAT): KES [Tax Amount]
+DISCOUNT: (KES [Discount Amount])
+TOTAL DUE: KES [Total Amount]
+
+PAYMENT INSTRUCTIONS:
+Bank Name: [Your Bank Name]
+Account Name: BORANGILABS
+Account Number: [Your Account Number]
+Branch: [Branch Name]
+Swift Code: [Your Swift Code]
+Reference: [Invoice #] / [Client Name]
+
+TERMS & CONDITIONS:
+1. Payment is due within 15 days of invoice date.
+2. Late payments are subject to a 2% monthly interest charge.
+3. All amounts are in Kenyan Shillings (KES).
+4. For any questions, please contact accounts@borangitech.com
+
+Thank you for your business!
+
+─────────────────────────────────────────────────────────────
+
+BORANGILABS
+RECEIPT
+
+[Company Logo]
+
+BORANGILABS
+[Company Address]
+City, Country
+Phone: +254 769 702 224
+Email: billing@borangitech.com
+VAT/PIN: [Your VAT/PIN Number]
+
+RECEIPT #: [Receipt Number]
+DATE: [Date]
+PAYMENT METHOD: [Payment Method]
+
+PAYMENT RECEIVED FROM:
+[Client Company Name]
+[Client Contact Person]
+[Client Address]
+
+┌───────────────────────┬────────────────────┬───────────────┐
+│ DESCRIPTION          │ INVOICE #          │ AMOUNT (KES)  │
+├───────────────────────┼────────────────────┼───────────────┤
+│ [Service Description] │ [Invoice Number]   │    [Amount]   │
+├───────────────────────┼────────────────────┼───────────────┤
+│ [Service Description] │ [Invoice Number]   │    [Amount]   │
+└───────────────────────┴────────────────────┴───────────────┘
+
+SUBTOTAL: KES [Subtotal]
+TAX (16% VAT): KES [Tax Amount]
+TOTAL PAID: KES [Total Amount]
+
+PAYMENT DETAILS:
+Payment Date: [Date]
+Payment Method: [Method]
+Transaction ID: [Transaction ID]
+
+This receipt confirms that payment has been received in full.
+Thank you for your business!
+
+Authorized Signature: ___________________
+Date: ___________________
