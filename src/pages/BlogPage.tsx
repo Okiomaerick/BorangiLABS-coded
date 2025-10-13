@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import BlogCard from '../components/BlogCard';
 import { getBlogs } from '../data/blogs';
@@ -12,6 +12,11 @@ const BlogPage: React.FC = () => {
   const totalPages = Math.ceil(allBlogs.length / BLOGS_PER_PAGE);
   const paginatedBlogs = allBlogs.slice(0, currentPage * BLOGS_PER_PAGE);
   const hasMore = currentPage < totalPages;
+
+  // Scroll to top when component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const featuredPost = allBlogs[0];
   // otherPosts can be uncommented and used when needed

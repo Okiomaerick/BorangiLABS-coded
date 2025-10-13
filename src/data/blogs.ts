@@ -118,7 +118,7 @@ async function getAccessToken() {
 // Initiate STK Push
 async function initiateSTKPush(phone, amount, accountReference, description) {
   const token = await getAccessToken();
-  const timestamp = new Date().toISOString().replace(/[\-:.]/g, '').slice(0, -3);
+  const timestamp = new Date().toISOString().replace(/[-:.]/g, '').slice(0, -3);
   const password = Buffer.from(\`\${shortcode}\${passkey}\${timestamp}\`).toString('base64');
   
   const payload = {
@@ -199,7 +199,7 @@ For more detailed documentation, visit the [official Safaricom Daraja API docume
 
 ---
 
-*Need help with M-Pesa integration?* [Contact our team](#contact) for professional integration services tailored to your business needs.`,    
+*Need help with M-Pesa integration?* [Contact our team](/contact) for professional integration services tailored to your business needs.`,    
     image: mpesaImage,
     author: 'Borangi Payments Team',
     date: '2024-09-25',
@@ -703,7 +703,7 @@ At BorangiLABS, we've helped numerous businesses design and implement high-perfo
 - Invest in proper documentation and developer experience
 
 ### Ready to Build Your Next-Gen API?
-Contact BorangiLABS today to discuss how we can help you build scalable, secure, and high-performance APIs that drive your business forward.
+[Contact BorangiLABS today](/contact) to discuss how we can help you build scalable, secure, and high-performance APIs that drive your business forward.
 
 📞 Call us: +254 769 702 224
 📧 Email: borangiuser@gmail.com
@@ -1055,7 +1055,7 @@ At BorangiLABS, we've successfully leveraged Hooks to build scalable solutions f
 
 💡 **Pro Tip from Our Developers:** When implementing Hooks in large-scale applications, we recommend creating a dedicated \`hooks\` directory for your custom hooks. This practice has helped our team maintain clean, organized, and reusable code across projects.
 
-Looking for expert React development services? [Schedule a free consultation](#) with our team to discuss how we can help you build robust, high-performance applications using the latest React patterns.
+Looking for expert React development services? [Schedule a free consultation with our team](/contact) to discuss how we can help you build robust, high-performance applications using the latest React patterns.
 
 ### Stay Updated
 
@@ -1594,7 +1594,7 @@ At BorangiLABS, we leverage Docker and other modern technologies to build scalab
 3. **Join Communities** - Connect with other developers
 4. **Build** - Create your first production-ready containerized application
 
-Ready to containerize your next project? [Contact BorangiLABS](#contact) for expert guidance on implementing Docker in your development workflow.`,
+Ready to containerize your next project? [Contact BorangiLABS](/contact) for expert guidance on implementing Docker in your development workflow.`,
     author: 'Borangi Tech Team',
     date: '2025-05-01',
     readTime: '15 min read',
@@ -1711,7 +1711,7 @@ Sometimes the problem lies with your Internet Service Provider.
 - Outdated local infrastructure
 
 **Fix:**
-- Run speed tests at different times using [BorangiISP Speed Test](https://speedtest.borangiisp.com)
+- Run speed tests at different times using [BorangiISP Speed Test](https://isp.borangi.co.ke/speedtest)
 - Compare with your subscribed plan
 - Contact BorangiISP support for line quality checks
 - Consider upgrading to fiber-optic if available
@@ -1755,7 +1755,7 @@ Unsecured networks can be exploited by unauthorized users.
 For BorangiISP customers, here are some specialized tips:
 
 ### 1. Check Service Status
-- Visit [BorangiISP Status Page](https://status.borangiisp.com)
+- Visit [BorangiISP Status Page](https://isp.borangi.co.ke/status)
 - Follow @BorangiISP_Ke on Twitter for outage updates
 
 ### 2. Optimize Router Settings
@@ -1776,10 +1776,10 @@ Reach out to our 24/7 support if you experience:
 - Suspected line damage or theft
 
 **Contact Options:**
-- Call: 0700 000 000
-- WhatsApp: 0700 000 001
-- Email: support@borangiisp.com
-- Live Chat: [BorangiISP Support](https://borangiisp.com/support)
+- Call: 0769 702 224
+- WhatsApp: 0769 702 224
+- Email: borangiuser@gmail.com
+- Live Chat: [BorangiISP Support](https://isp.borangi.co.ke/support)
 
 ## BorangiISP Plans Comparison
 
@@ -1798,11 +1798,11 @@ Slow WiFi in 2025 is often easily fixable with the right approach. By following 
 
 ### Take Action Today
 
-1. **Test your speed**: [BorangiISP Speed Test](https://speedtest.borangiisp.com)
-2. **Upgrade your plan**: [View BorangiISP Plans](https://borangiisp.com/plans)
-3. **Get support**: [Contact BorangiISP](https://borangiisp.com/contact)
+1. **Test your speed**: [BorangiISP Speed Test](https://isp.borangi.co.ke/speedtest)
+2. **Upgrade your plan**: [View BorangiISP Plans](https://isp.borangi.co.ke)
+3. **Get support**: [Contact BorangiISP](https://isp.borangi.co.ke/contact)
 
-💡 **Pro Tip**: For the best experience, schedule a free WiFi optimization consultation with our technicians. Call 0700 000 000 to book yours today!
+💡 **Pro Tip**: For the best experience, schedule a free WiFi optimization consultation with our technicians. Call 0769 702 224 to book yours today!
 
 ---
 
@@ -1928,7 +1928,7 @@ POS systems are no longer a luxury — they are a necessity for small shops in K
 
 At BorangiLABS, we specialize in building custom POS systems designed for the Kenyan retail market.
 
-👉 Want to transform your shop with POS? [Contact us today](https://borangitech.com/contact)`,
+👉 Want to transform your shop with POS? [Contact us today](/contact)`,
     image: posImage,
     author: 'Borangi Business Solutions',
     date: '2024-09-28',

@@ -68,16 +68,27 @@ const Header: React.FC = () => {
 
 
 
-  // Scroll to section on homepage
+  // Scroll to section on homepage or navigate to home and scroll to section
   const scrollToSection = (sectionId: string) => {
     if (isHomePage) {
+      // If we're already on the homepage, just scroll to the section
       const element = document.getElementById(sectionId);
       if (element) {
+        window.scrollTo(0, 0); // First scroll to top
         element.scrollIntoView({ behavior: 'smooth' });
       }
     } else {
-      navigate(`/#${sectionId}`);
+      // If we're on another page, navigate to home with the section hash
+      // The Home component will handle scrolling to the section
+      navigate(`/#${sectionId}`, { replace: true });
     }
+  };
+
+  // Handle navigation for regular links
+  const handleNavigation = (e: React.MouseEvent, path: string) => {
+    e.preventDefault();
+    navigate(path);
+    window.scrollTo(0, 0);
   };
 
   const headerClass = `header ${isHomePage ? 'home-header' : ''} ${isScrolled ? 'scrolled' : 'initial'}`;
@@ -121,9 +132,7 @@ const Header: React.FC = () => {
                   <Link 
                     to={item.path}
                     className={location.pathname.startsWith(item.path) ? 'active' : ''}
-                    onClick={() => {
-                      window.scrollTo(0, 0);
-                    }}
+                    onClick={(e) => handleNavigation(e, item.path || '/')}
                     role="menuitem"
                     aria-current={location.pathname.startsWith(item.path) ? 'page' : undefined}
                   >

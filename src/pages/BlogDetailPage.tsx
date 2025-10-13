@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
@@ -17,6 +17,11 @@ interface CodeProps {
 const BlogDetailPage: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
   const blog = slug ? getBlogBySlug(slug) : null;
+
+  // Scroll to top when the blog post changes
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [slug]);
 
   if (!blog) {
     return (
@@ -111,8 +116,20 @@ const BlogDetailPage: React.FC = () => {
                           </a>
                         );
                       }
+                      // Handle internal links (starting with /)
+                      if (props.href?.startsWith('/')) {
+                        return (
+                          <Link to={props.href} className="blog-link">
+                            {props.children || 'Internal link'}
+                          </Link>
+                        );
+                      }
                       // External links open in a new tab
-                      return <a {...props} className="blog-link" target="_blank" rel="noopener noreferrer" />;
+                      return (
+                        <a {...props} className="blog-link" target="_blank" rel="noopener noreferrer">
+                          {props.children || 'External link'}
+                        </a>
+                      );
                     },
                     h2: ({node, ...props}) => <h2 className="blog-h2" {...props}>{props.children || ''}</h2>,
                     h3: ({node, ...props}) => <h3 className="blog-h3" {...props}>{props.children || ''}</h3>,

@@ -8,15 +8,6 @@ import borangiNmsImg from '../assets/portfolio/borangi-NMS.webp';
 import backyardKinyoziImg from '../assets/portfolio/backyard-kinyozi.webp';
 import shadowFeedImg from '../assets/portfolio/shadow-feed_AGORA.webp';
 
-interface Project {
-  id: number;
-  title: string;
-  description: string;
-  image: string;
-  tags: string[];
-  category: string;
-}
-
 
 const Portfolio: React.FC = () => {
   const baseProjects = [
@@ -81,8 +72,9 @@ const Portfolio: React.FC = () => {
   const scrollPosition = useRef(0);
   const scrollSpeed = 0.5; // Slower scroll speed
   const isDragging = useRef(false);
-  const startX = useRef(0);
-  const scrollLeft = useRef(0);
+  // Removed unused refs
+  // const startX = useRef(0);
+  // const scrollLeft = useRef(0);
 
   // Handle window resize and mobile detection
   useEffect(() => {

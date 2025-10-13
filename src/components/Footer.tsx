@@ -152,8 +152,8 @@ const Footer: React.FC = () => {
           <div className="footer-section">
             <h4>Our Network</h4>
             <ul className="footer-links">
-              <li><a href="https://borangi.tech/isp" target="_blank" rel="noopener noreferrer" onClick={handleNavigation}>BorangiISP</a></li>
-              <li><a href="https://shop.borangi.tech" target="_blank" rel="noopener noreferrer" onClick={handleNavigation}>BorangiSHOP</a></li>
+              <li><a href="https://isp.borangi.co.ke" target="_blank" rel="noopener noreferrer" onClick={handleNavigation}>BorangiISP</a></li>
+              <li><a href="https://shop.borangi.co.ke" target="_blank" rel="noopener noreferrer" onClick={handleNavigation}>BorangiSHOP</a></li>
             </ul>
           </div>
           

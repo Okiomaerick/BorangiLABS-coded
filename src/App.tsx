@@ -22,6 +22,7 @@ import BlogDetailPage from './pages/BlogDetailPage';
 import CareerPage from './pages/CareerPage';
 import KnowledgeBasePage from './pages/KnowledgeBasePage';
 import KnowledgeBaseCategory from './pages/KnowledgeBaseCategory';
+import KnowledgeBaseArticle from './pages/KnowledgeBaseArticle';
 import NotFound from './pages/NotFound';
 import Footer from './components/Footer';
 import ScrollToTopButton from './components/ScrollToTopButton';
@@ -132,6 +133,7 @@ function App() {
             <Route path="/careers" element={<CareerPage />} />
             <Route path="/knowledge-base" element={<KnowledgeBasePage />} />
             <Route path="/knowledge-base/category/:categoryId" element={<KnowledgeBaseCategory />} />
+            <Route path="/knowledge-base/article/:slug" element={<KnowledgeBaseArticle />} />
             {/* Add explicit routes for known paths that should show 404 */}
             <Route path="/labs" element={<Navigate to="/404" replace />} />
             <Route path="/labs*" element={<Navigate to="/404" replace />} />

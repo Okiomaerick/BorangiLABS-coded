@@ -96,8 +96,8 @@ const quickReplies = [
 
 const ChatBot: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [isTerminalMode, setIsTerminalMode] = useState(false);
-  // Removed unused state variable
+  // Removed unused state variables
+  // const [isTerminalMode, setIsTerminalMode] = useState(false);
   // const [isMinimized, setIsMinimized] = useState(false);
   const [inputValue, setInputValue] = useState('');
   const [messages, setMessages] = useState<Message[]>(initialMessages);
@@ -304,7 +304,7 @@ const ChatBot: React.FC = () => {
               value={inputValue}
               onChange={(e) => setInputValue(e.target.value)}
               onKeyDown={handleKeyDown}
-              placeholder={isTerminalMode ? 'Enter command...' : 'Type your message...'}
+              placeholder="Type your message..."
               className="chat-input"
               aria-label="Terminal input"
               autoComplete="off"

@@ -8,7 +8,6 @@ import {
   FaCode, 
   FaLock, 
   FaChartLine,
-  FaUsers,
   FaShoppingCart,
   FaCreditCard,
   FaMobile
