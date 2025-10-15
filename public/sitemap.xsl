@@ -9,7 +9,7 @@
   <xsl:template match="/">
     <html xmlns="http://www.w3.org/1999/xhtml">
       <head>
-        <title>XML Sitemap - BorangiLABS</title>
+        <title>XML Sitemap - Borangi</title>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <style type="text/css">
           body {
@@ -78,7 +78,7 @@
       <body>
         <div class="header">
           <h1>XML Sitemap</h1>
-          <p>This is an XML Sitemap for <a href="https://borangilabs.com">BorangiLABS</a>.</p>
+          <p>This is an XML Sitemap for <a href="https://borangi.co.ke">Borangi</a>.</p>
         </div>
 
         <table>
@@ -113,8 +113,8 @@
         </table>
 
         <div class="footer">
-          <p>This sitemap is powered by BorangiLABS. For more information, visit 
-          <a href="https://borangilabs.com">borangilabs.com</a></p>
+          <p>This sitemap is powered by Borangi. For more information, visit 
+          <a href="https://borangi.co.ke">borangi.co.ke</a></p>
         </div>
       </body>
     </html>

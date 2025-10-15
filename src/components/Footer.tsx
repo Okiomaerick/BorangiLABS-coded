@@ -97,7 +97,7 @@ const Footer: React.FC = () => {
               </li>
               <li className="contact-item">
                 <i className="icon-email"></i>
-                <a href="mailto:borangiuser@gmail.com">borangiuser@gmail.com</a>
+                <a href="mailto:info@borangi.co.ke">info@borangi.co.ke</a>
               </li>
               <li className="contact-item">
                 <i className="icon-location"></i>

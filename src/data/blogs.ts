@@ -401,7 +401,7 @@ At BorangiLABS, we don't just design interfaces—we craft experiences that driv
 Whether you're launching a new product, redesigning an existing platform, or looking to improve conversion rates, our UI/UX experts are here to help.
 
 📞 **Call us today**: +254 769 702 224
-📧 **Email**: borangiuser@gmail.com
+📧 **Email**: support@borangi.co.ke
 📍 **Visit us**: Nakuru, Nakuru West, Kenya
 
 Let's create something extraordinary together!
@@ -706,7 +706,7 @@ At BorangiLABS, we've helped numerous businesses design and implement high-perfo
 [Contact BorangiLABS today](/contact) to discuss how we can help you build scalable, secure, and high-performance APIs that drive your business forward.
 
 📞 Call us: +254 769 702 224
-📧 Email: borangiuser@gmail.com
+📧 Email: support@borangi.co.ke
 📍 Location: Nakuru, Nakuru West, Kenya
 
 ---
@@ -1778,7 +1778,7 @@ Reach out to our 24/7 support if you experience:
 **Contact Options:**
 - Call: 0769 702 224
 - WhatsApp: 0769 702 224
-- Email: borangiuser@gmail.com
+- Email: support@borangi.co.ke
 - Live Chat: [BorangiISP Support](https://isp.borangi.co.ke/support)
 
 ## BorangiISP Plans Comparison

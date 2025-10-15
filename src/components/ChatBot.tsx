@@ -58,7 +58,7 @@ const terminalResponses: { [key: string]: TerminalResponse } = {
   contact: () => `Contact Information:
   
   📞 Phone: +254 769 702 224
-  ✉️ Email: borangiuser@gmail.com
+  ✉️ Email: info@borangi.co.ke
   📍 Location: Nakuru, Kenya
   
   Type 'help' for more options.

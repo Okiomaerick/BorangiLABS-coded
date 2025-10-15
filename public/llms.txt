@@ -36,6 +36,6 @@ Crawl-delay: 10
 Sitemap: https://borangilabs.com/sitemap.xml
 
 # Contact information for AI crawler operators
-Contact: webmaster@borangilabs.com
+Contact: webmaster@borangi.co.ke
 
 # Last updated: 2025-10-05

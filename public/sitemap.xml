@@ -5,43 +5,43 @@
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
   <url>
-    <loc>https://borangilabs.com/</loc>
+    <loc>https://borangi.co.ke/</loc>
     <lastmod>2025-10-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://borangilabs.com/contact</loc>
+    <loc>https://borangi.co.ke/contact</loc>
     <lastmod>2025-10-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://borangilabs.com/privacy-policy</loc>
+    <loc>https://borangi.co.ke/privacy-policy</loc>
     <lastmod>2025-10-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://borangilabs.com/terms-of-service</loc>
+    <loc>https://borangi.co.ke/terms-of-service</loc>
     <lastmod>2025-10-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://borangilabs.com/blog</loc>
+    <loc>https://borangi.co.ke/blog</loc>
     <lastmod>2025-10-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://borangilabs.com/careers</loc>
+    <loc>https://borangi.co.ke/careers</loc>
     <lastmod>2025-10-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://borangilabs.com/knowledge-base</loc>
+    <loc>https://borangi.co.ke/knowledge-base</loc>
     <lastmod>2025-10-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>

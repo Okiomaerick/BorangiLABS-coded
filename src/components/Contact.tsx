@@ -173,7 +173,7 @@ const Contact: React.FC = () => {
             <div className="info-item">
               <div>
                 <h4>Email</h4>
-                <p>borangiuser@gmail.com</p>
+                <p>info@borangi.co.ke</p>
               </div>
             </div>
             <div className="info-item">
