@@ -6,4 +6,4 @@ Disallow: /private
 Disallow: /api
 
 # Sitemap location
-Sitemap: https://borangi.co.ke/sitemap.xml
+Sitemap: https://labs.borangi.co.ke/sitemap.xml

@@ -188,7 +188,7 @@ const Contact: React.FC = () => {
                 <div className="social-links">
                 <div className="social-link-wrapper">
                   <a 
-                    href="https://www.instagram.com/borangilabs" 
+                    href="https://www.instagram.com/borangi_technologies" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="social-link instagram"

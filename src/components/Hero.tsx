@@ -83,39 +83,39 @@ export const Button = styled.button<ButtonProps>\`
     transform: translateY(0);
   }
 \`;`,
-    styles: `// styles/theme.ts
-const theme = {
-  colors: {
-    primary: '#4f46e5',
-    secondary: '#8b5cf6',
-    success: '#10b981',
-    danger: '#ef4444',
-    warning: '#f59e0b',
-    info: '#3b82f6',
-    light: '#f8fafc',
-    dark: '#0f172a',
-  },
-  spacing: {
-    xs: '0.25rem',
-    sm: '0.5rem',
-    md: '1rem',
-    lg: '1.5rem',
-    xl: '2rem',
-  },
-  breakpoints: {
-    sm: '640px',
-    md: '768px',
-    lg: '1024px',
-    xl: '1280px',
-  },
-  shadows: {
-    sm: '0 1px 2px 0 rgb(0 0 0 / 0.05)',
-    DEFAULT: '0 1px 3px 0 rgb(0 0 0 / 0.1)',
-    md: '0 4px 6px -1px rgb(0 0 0 / 0.1)',
-    lg: '0 10px 15px -3px rgb(0 0 0 / 0.1)',
-    xl: '0 20px 25px -5px rgb(0 0 0 / 0.1)',
-  },
-};`
+    styles: `<span class="token comment">// styles/theme.ts</span>
+<span class="token keyword">const</span> theme <span class="token operator">=</span> <span class="token punctuation">{</span>
+  colors<span class="token operator">:</span> <span class="token punctuation">{</span>
+    primary<span class="token operator">:</span> <span class="token string" style="color: #4f46e5">'#4f46e5'</span><span class="token punctuation">,</span>    <span class="token comment">// Indigo-600</span>
+    secondary<span class="token operator">:</span> <span class="token string" style="color: #8b5cf6">'#8b5cf6'</span><span class="token punctuation">,</span>  <span class="token comment">// Violet-500</span>
+    success<span class="token operator">:</span> <span class="token string" style="color: #10b981">'#10b981'</span><span class="token punctuation">,</span>    <span class="token comment">// Emerald-500</span>
+    danger<span class="token operator">:</span> <span class="token string" style="color: #ef4444">'#ef4444'</span><span class="token punctuation">,</span>     <span class="token comment">// Red-500</span>
+    warning<span class="token operator">:</span> <span class="token string" style="color: #f59e0b">'#f59e0b'</span><span class="token punctuation">,</span>    <span class="token comment">// Amber-500</span>
+    info<span class="token operator">:</span> <span class="token string" style="color: #3b82f6">'#3b82f6'</span><span class="token punctuation">,</span>      <span class="token comment">// Blue-500</span>
+    light<span class="token operator">:</span> <span class="token string" style="color: #f8fafc; background-color: #0f172a; padding: 0 2px;">'#f8fafc'</span><span class="token punctuation">,</span>     <span class="token comment">// Slate-50</span>
+    dark<span class="token operator">:</span> <span class="token string" style="color: #0f172a; background-color: #f8fafc; padding: 0 2px;">'#0f172a'</span><span class="token punctuation">,</span>      <span class="token comment">// Slate-900</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  spacing<span class="token operator">:</span> <span class="token punctuation">{</span>
+    xs<span class="token operator">:</span> <span class="token string">'0.25rem'</span><span class="token punctuation">,</span>  <span class="token comment">// 4px</span>
+    sm<span class="token operator">:</span> <span class="token string">'0.5rem'</span><span class="token punctuation">,</span>   <span class="token comment">// 8px</span>
+    md<span class="token operator">:</span> <span class="token string">'1rem'</span><span class="token punctuation">,</span>     <span class="token comment">// 16px</span>
+    lg<span class="token operator">:</span> <span class="token string">'1.5rem'</span><span class="token punctuation">,</span>   <span class="token comment">// 24px</span>
+    xl<span class="token operator">:</span> <span class="token string">'2rem'</span><span class="token punctuation">,</span>     <span class="token comment">// 32px</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  breakpoints<span class="token operator">:</span> <span class="token punctuation">{</span>
+    sm<span class="token operator">:</span> <span class="token string">'640px'</span><span class="token punctuation">,</span>    <span class="token comment">// Small screens</span>
+    md<span class="token operator">:</span> <span class="token string">'768px'</span><span class="token punctuation">,</span>    <span class="token comment">// Tablets</span>
+    lg<span class="token operator">:</span> <span class="token string">'1024px'</span><span class="token punctuation">,</span>   <span class="token comment">// Laptops</span>
+    xl<span class="token operator">:</span> <span class="token string">'1280px'</span><span class="token punctuation">,</span>   <span class="token comment">// Desktops</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  shadows<span class="token operator">:</span> <span class="token punctuation">{</span>
+    sm<span class="token operator">:</span> <span class="token string">'0 1px 2px 0 rgb(0 0 0 / 0.05)'</span><span class="token punctuation">,</span>
+    <span class="token constant">DEFAULT</span><span class="token operator">:</span> <span class="token string">'0 1px 3px 0 rgb(0 0 0 / 0.1)'</span><span class="token punctuation">,</span>
+    md<span class="token operator">:</span> <span class="token string">'0 4px 6px -1px rgb(0 0 0 / 0.1)'</span><span class="token punctuation">,</span>
+    lg<span class="token operator">:</span> <span class="token string">'0 10px 15px -3px rgb(0 0 0 / 0.1)'</span><span class="token punctuation">,</span>
+    xl<span class="token operator">:</span> <span class="token string">'0 20px 25px -5px rgb(0 0 0 / 0.1)'</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>`
   };
 
   const codeSnippets = {

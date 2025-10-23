@@ -104,7 +104,7 @@ const Footer: React.FC = () => {
                 <span>Nakuru, Nakuru West, Kenya</span>
               </li>
               <li className="footer-social-links">
-                <a href="https://instagram.com/borangi254" target="_blank" rel="noopener noreferrer" className="social-icon instagram">
+                <a href="https://instagram.com/borangi_technologies" target="_blank" rel="noopener noreferrer" className="social-icon instagram">
                   <InstagramIcon />
                 </a>
                 <a href="https://x.com/borangiuser" target="_blank" rel="noopener noreferrer" className="social-icon x">

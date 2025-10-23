@@ -78,7 +78,7 @@
       <body>
         <div class="header">
           <h1>XML Sitemap</h1>
-          <p>This is an XML Sitemap for <a href="https://borangi.co.ke">Borangi</a>.</p>
+          <p>This is an XML Sitemap for <a href="https://labs.borangi.co.ke">Borangi</a>.</p>
         </div>
 
         <table>
@@ -114,7 +114,7 @@
 
         <div class="footer">
           <p>This sitemap is powered by Borangi. For more information, visit 
-          <a href="https://borangi.co.ke">borangi.co.ke</a></p>
+          <a href="https://labs.borangi.co.ke">labs.borangi.co.ke</a></p>
         </div>
       </body>
     </html>

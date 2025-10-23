@@ -1815,6 +1815,396 @@ At BorangiLABS, we've successfully implemented these patterns in production envi
     date: '2025-10-13',
     readTime: '20 min read',
     tags: ['express', 'nodejs', 'api', 'backend', 'scalability', 'performance']
+  },
+  'realtime-analytics-firebase': {
+    id: 10,
+    title: 'Real-time Analytics with Firebase',
+    category: 'Analytics',
+    description: 'Learn how to implement real-time analytics and user tracking in your applications using Firebase Analytics and Realtime Database.',
+    content: `# Real-time Analytics with Firebase
+
+Firebase provides powerful tools for implementing real-time analytics in your web and mobile applications. This guide will walk you through setting up Firebase Analytics and Realtime Database to track user behavior and application metrics in real-time.
+
+## Table of Contents
+1. [Setting Up Firebase](#setting-up-firebase)
+2. [Implementing Analytics](#implementing-analytics)
+3. [Real-time Data with Firestore](#real-time-data-with-firestore)
+4. [Creating Real-time Dashboards](#creating-real-time-dashboards)
+5. [Advanced Analytics Features](#advanced-analytics-features)
+6. [Performance Monitoring](#performance-monitoring)
+7. [Security Rules](#security-rules)
+8. [Best Practices](#best-practices)
+
+## Setting Up Firebase
+
+### 1. Create a Firebase Project
+1. Go to the [Firebase Console](https://console.firebase.google.com/)
+2. Click "Add project" and follow the setup wizard
+3. Register your app (Web, iOS, or Android)
+
+### 2. Install Firebase SDK
+
+\`\`\`bash
+# Install Firebase CLI globally
+npm install -g firebase-tools
+
+# Or install just the required packages
+npm install firebase @react-native-firebase/app @react-native-firebase/analytics
+\`\`\`
+
+### 3. Initialize Firebase
+
+\`\`\`javascript
+// src/firebase.js
+import { initializeApp } from 'firebase/app';
+import { getAnalytics } from 'firebase/analytics';
+import { getFirestore } from 'firebase/firestore';
+
+const firebaseConfig = {
+  apiKey: "YOUR_API_KEY",
+  authDomain: "your-app.firebaseapp.com",
+  projectId: "your-app-id",
+  storageBucket: "your-app.appspot.com",
+  messagingSenderId: "1234567890",
+  appId: "1:1234567890:web:abc123def456",
+  measurementId: "G-ABC123DEF4"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
+const db = getFirestore(app);
+
+export { app, analytics, db };
+\`\`\`
+
+## Implementing Analytics
+
+### Basic Event Tracking
+
+\`\`\`javascript
+import { getAnalytics, logEvent } from 'firebase/analytics';
+
+// Log a custom event
+const logButtonClick = (buttonName) => {
+  const analytics = getAnalytics();
+  logEvent(analytics, 'button_click', {
+    button_name: buttonName,
+    timestamp: new Date().toISOString()
+  });
+};
+
+// Track screen views
+const logScreenView = (screenName) => {
+  const analytics = getAnalytics();
+  logEvent(analytics, 'screen_view', {
+    screen_name: screenName,
+    screen_class: screenName
+  });
+};
+\`\`\`
+
+### User Properties
+
+\`\`\`javascript
+import { setUserProperties } from 'firebase/analytics';
+
+// Set user properties
+const setUserRole = (userId, role) => {
+  const analytics = getAnalytics();
+  setUserProperties(analytics, {
+    user_id: userId,
+    user_role: role,
+    subscription_tier: 'premium',
+    last_active: new Date().toISOString()
+  });
+};
+\`\`\`
+
+## Real-time Data with Firestore
+
+### Setting Up Firestore
+
+\`\`\`javascript
+import { collection, addDoc, onSnapshot, query, where } from 'firebase/firestore';
+
+// Add a document
+const addAnalyticsEvent = async (eventData) => {
+  try {
+    const docRef = await addDoc(collection(db, 'analytics_events'), {
+      ...eventData,
+      timestamp: new Date().toISOString()
+    });
+    console.log('Event recorded with ID: ', docRef.id);
+  } catch (error) {
+    console.error('Error adding document: ', error);
+  }
+};
+
+// Real-time listener
+const setupRealtimeAnalytics = (callback) => {
+  const q = query(
+    collection(db, 'analytics_events'),
+    where('timestamp', '>', new Date(Date.now() - 24 * 60 * 60 * 1000).toISOString())
+  );
+
+  return onSnapshot(q, (querySnapshot) => {
+    const events = [];
+    querySnapshot.forEach((doc) => {
+      events.push({ id: doc.id, ...doc.data() });
+    });
+    callback(events);
+  });
+};
+\`\`\`
+
+## Creating Real-time Dashboards
+
+### Using Firestore with a Frontend Framework
+
+\`\`\`jsx
+import React, { useEffect, useState } from 'react';
+import { collection, query, where, onSnapshot } from 'firebase/firestore';
+import { db } from '../firebase';
+
+const AnalyticsDashboard = () => {
+  const [events, setEvents] = useState([]);
+  const [activeUsers, setActiveUsers] = useState(0);
+
+  useEffect(() => {
+    // Real-time events
+    const eventsQuery = query(
+      collection(db, 'analytics_events'),
+      where('timestamp', '>', new Date(Date.now() - 60 * 60 * 1000).toISOString())
+    );
+
+    const unsubscribe = onSnapshot(eventsQuery, (snapshot) => {
+      const eventsData = [];
+      const userIds = new Set();
+      
+      snapshot.forEach((doc) => {
+        const event = { id: doc.id, ...doc.data() };
+        eventsData.push(event);
+        if (event.userId) userIds.add(event.userId);
+      });
+      
+      setEvents(eventsData);
+      setActiveUsers(userIds.size);
+    });
+
+    return () => unsubscribe();
+  }, []);
+
+  // Calculate metrics
+  const pageViews = events.filter(e => e.event_name === 'page_view').length;
+  const buttonClicks = events.filter(e => e.event_name === 'button_click').length;
+
+  return (
+    <div className="analytics-dashboard">
+      <div className="metrics-grid">
+        <div className="metric-card">
+          <h3>Active Users</h3>
+          <div className="metric-value">{activeUsers}</div>
+        </div>
+        <div className="metric-card">
+          <h3>Page Views</h3>
+          <div className="metric-value">{pageViews}</div>
+        </div>
+        <div className="metric-card">
+          <h3>Button Clicks</h3>
+          <div className="metric-value">{buttonClicks}</div>
+        </div>
+      </div>
+      
+      <div className="events-list">
+        <h3>Recent Events</h3>
+        <ul>
+          {events.slice(0, 10).map((event) => (
+            <li key={event.id}>
+              <span className="event-name">{event.event_name}</span>
+              <span className="event-time">
+                {new Date(event.timestamp).toLocaleTimeString()}
+              </span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  );
+};
+\`\`\`
+
+## Advanced Analytics Features
+
+### Funnels and Conversion Tracking
+
+\`\`\`javascript
+// Track user journey through a funnel
+const trackFunnel = async (userId, step, data = {}) => {
+  const docRef = await addDoc(collection(db, 'funnel_events'), {
+    userId,
+    step,
+    ...data,
+    timestamp: new Date().toISOString()
+  });
+  return docRef.id;
+};
+
+// Example usage
+trackFunnel('user123', 'product_viewed', { productId: 'prod_123' });
+\`\`\`
+
+### A/B Testing
+
+\`\`\`javascript
+import { getRemoteConfig, fetchAndActivate, getValue } from 'firebase/remote-config';
+
+const setupABTesting = async () => {
+  const remoteConfig = getRemoteConfig();
+  
+  // Set default values
+  remoteConfig.defaultConfig = {
+    'new_ui_enabled': false,
+    'special_offer_text': 'Limited time offer!',
+    'max_items_to_show': 10
+  };
+
+  try {
+    await fetchAndActivate(remoteConfig);
+    
+    // Get values
+    const newUIEnabled = getValue(remoteConfig, 'new_ui_enabled').asBoolean();
+    const offerText = getValue(remoteConfig, 'special_offer_text').asString();
+    
+    // Log which variant the user is seeing
+    logEvent(analytics, 'ab_test_exposure', {
+      experiment_name: 'new_ui',
+      variant: newUIEnabled ? 'variant_a' : 'control'
+    });
+    
+    return { newUIEnabled, offerText };
+  } catch (error) {
+    console.error('Error fetching remote config:', error);
+    return remoteConfig.defaultConfig;
+  }
+};
+\`\`\`
+
+## Performance Monitoring
+
+### Track Custom Performance Metrics
+
+\`\`\`javascript
+import { getPerformance, trace } from 'firebase/performance';
+
+const measurePageLoad = async () => {
+  const perf = getPerformance();
+  const t = trace(perf, 'page_load');
+  
+  t.start();
+  
+  try {
+    // Load your page content here
+    await loadPageContent();
+    
+    // Add custom attributes
+    t.putAttribute('page_name', 'home');
+    t.putMetric('dom_elements', document.getElementsByTagName('*').length);
+    
+    // Stop the trace when done
+    t.stop();
+  } catch (error) {
+    t.putAttribute('error', error.message);
+    t.stop();
+    throw error;
+  }
+};
+\`\`\`
+
+## Security Rules
+
+### Basic Security Rules for Analytics
+
+\`\`\`javascript
+// firestore.rules
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /analytics_events/{document=**} {
+      allow read: if request.auth != null && 
+        get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'admin';
+      allow create: if request.resource.data.timestamp == request.time;
+    }
+    
+    match /user_analytics/{userId}/{document=**} {
+      allow read, write: if request.auth != null && 
+        (request.auth.uid == userId || 
+         get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'admin');
+    }
+  }
+}
+\`\`\`
+
+## Best Practices
+
+1. **Data Minimization**
+   - Only collect the data you need
+   - Use sampling for high-volume events
+   - Set data retention policies
+
+2. **Performance**
+   - Batch events when possible
+   - Use offline persistence
+   - Throttle high-frequency events
+
+3. **Privacy**
+   - Anonymize user data
+   - Comply with GDPR/CCPA
+   - Provide opt-out mechanisms
+
+4. **Monitoring**
+   - Set up alerts for anomalies
+   - Monitor event volume
+   - Regularly audit your analytics implementation
+
+## Troubleshooting
+
+### Common Issues
+
+1. **Events not showing up**
+   - Check if Firebase is properly initialized
+   - Verify internet connection
+   - Check browser console for errors
+   - Ensure correct Firebase project is being used
+
+2. **High latency**
+   - Implement batching
+   - Use offline persistence
+   - Check network conditions
+
+3. **Data discrepancies**
+   - Check timezone settings
+   - Verify event parameters
+   - Check for duplicate events
+
+## Resources
+
+- [Firebase Analytics Documentation](https://firebase.google.com/docs/analytics)
+- [Firestore Documentation](https://firebase.google.com/docs/firestore)
+- [Firebase Performance Monitoring](https://firebase.google.com/docs/perf-mon)
+- [Firebase Security Rules](https://firebase.google.com/docs/rules)
+
+## Conclusion
+
+Firebase provides a powerful suite of tools for implementing real-time analytics in your applications. By combining Firebase Analytics with Firestore and other Firebase services, you can gain valuable insights into user behavior and application performance. Remember to follow best practices for data collection, security, and performance to ensure your analytics implementation is both effective and efficient.
+
+For production applications, consider implementing additional features like data export to BigQuery for more advanced analysis and reporting.`,
+    author: 'Borangi Analytics Team',
+    role: 'Data & Analytics Specialists',
+    bio: 'Our analytics team specializes in helping businesses make data-driven decisions through comprehensive analytics implementations and insights.',
+    date: '2025-10-23',
+    readTime: '15 min read',
+    tags: ['firebase', 'analytics', 'realtime', 'data', 'performance']
   }
 };
 

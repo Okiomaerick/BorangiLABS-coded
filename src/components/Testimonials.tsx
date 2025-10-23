@@ -30,7 +30,7 @@ const Testimonials: React.FC = () => {
     },
     {
       id: 3,
-      name: 'Joyce Kwamboka',
+      name: 'Sarah Wanjiku',
       role: 'Marketing Director',
       company: 'Venti Advocates',
       content: 'The team at BorangiLABS understood our vision perfectly. Their creative approach and technical skills helped us achieve our business goals effectively.',
@@ -54,9 +54,9 @@ const Testimonials: React.FC = () => {
     },
     {
       id: 6,
-      name: 'Sarah Wanjiku',
+      name: 'Joyce Kwamboka',
       role: 'Owner',
-      company: 'Mavuno Safi',
+      company: 'Hygienic One Dairy',
       content: 'The POS system designed by BorangiLABS has streamlined our operations significantly. Inventory management is now a breeze, and the sales reporting features have given us valuable business insights. Highly recommended!',
       avatar: '🛒'
     }

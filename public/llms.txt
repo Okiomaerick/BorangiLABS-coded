@@ -33,7 +33,7 @@ Allow: /knowledge-base/*
 Crawl-delay: 10
 
 # Sitemap for AI crawlers
-Sitemap: https://borangilabs.com/sitemap.xml
+Sitemap: https://labs.borangi.co.ke/sitemap.xml
 
 # Contact information for AI crawler operators
 Contact: webmaster@borangi.co.ke
